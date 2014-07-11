@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  wordbank_id: 1
+  year_id: 1
+  total_count: 1
+  headline_count: 1
+
+two:
+  wordbank_id: 1
+  year_id: 1
+  total_count: 1
+  headline_count: 1
