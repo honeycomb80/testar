@@ -99,6 +99,7 @@ module Parsing
   end
 
   def add_word_phrases(array_of_words)
+    hold = []
     array_of_words.each do |word|
       n = array_of_words.index(word)
       # Creates a two word array
@@ -109,7 +110,8 @@ module Parsing
       if two_word[1].nil?
         two_word.clear
       else
-        two_word = two_word.join(" ").to_s
+        two_word = two_word.join(" ")
+        hold.push(two_word)
       end
       # Creates a three word array
       three_word = array_of_words[n..n+2]
@@ -118,35 +120,8 @@ module Parsing
       if three_word[2].nil?
         three_word.clear
       else
-        three_word.join(" ")
-      end
-    end
-  end
-
-  def add_title_phrases(array_of_words)
-    array_of_words.each do |word|
-      n = array_of_words.index(word)
-      # Creates a two word array
-      two_word = array_of_words[n..n+1]
-      check_two(two_word)
-      if two_word[1].nil?
-        two_word.clear
-      else
-        two_word.each do |c|
-          strip_punct(c)
-        end
-        two_word.join(" ")
-      end
-      # creates a three word array
-      three_word = array_of_words[n..n+2]
-      check_three(three_word)
-      if three_word[2].nil?
-        three_word.clear
-      else
-        three_word.each do |c|
-          strip_punct(c)
-        end
-        three_word.join(" ")
+        three_word = three_word.join(" ")
+        hold.push(three_word)
       end
     end
   end
