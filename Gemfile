@@ -23,14 +23,50 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
+# for dates
+gem 'by_star', :git => "git://github.com/radar/by_star"
+
+# for the scrapes
+gem 'nokogiri'
+gem 'mechanize'
+
+# for the async
+# gem 'whenever'
+# gem 'redis'
+# gem 'sidekiq'
+# gem 'ice_cube'
+# gem 'celluloid'
+# gem 'sidetiq'
+# gem 'unicorn'
+
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+group :development do 
+  gem 'quiet_assets'
+  gem 'meta_request' # https://chrome.google.com/webstore/detail/railspanel/gjpfobpafnhjhbajcjgccbbdofdckggg
+  gem 'binding_of_caller' # Going up the stack  binding.of_caller(2).eval('var = :hello')
+  gem 'pry-rails' # Uses pry instead of irb for the console
+  gem 'pry-byebug'
+end
+
+# For the looks
+gem 'bootstrap-sass'
+gem 'bootstrap-generators', '~> 3.1.1'
+
+group :development, :test do
+  gem 'capybara'
+  gem 'rspec-rails', '~> 2.99'
+  gem "factory_girl_rails", "~> 4.0"
+  gem 'faker'
+  gem 'forgery'
+  gem 'unicorn-rails'
+end
+
+
+# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+# gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
-# Use unicorn as the app server
-# gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -38,4 +74,3 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'forgery'

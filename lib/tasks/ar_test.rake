@@ -1,7 +1,8 @@
 task :ar_test => :environment do
-  
+  require 'date'
+
   def article_test
-    article = Article.first
+    # article = Article.first
     week_count = WeekCounts.first.wordbank.word
     word = Wordbank.first.word
     puts word
@@ -17,7 +18,16 @@ task :ar_test => :environment do
     puts week_count.wordbank
   end
 
-# article_test
-new_entry_test
+  def month_date(article_date)
+    article_date = Date.parse(article_date)
+    month_date = article_date - article_date.wday
+    w = Month.find_by_month(month_date).id
+    puts w
+  end
+
+a = Article.first
+a.update(scraped: false)
+
+# month_date('2005-06-11')
 
 end
