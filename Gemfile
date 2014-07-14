@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.1'
 # Use postgresql as the database for Active Record
@@ -40,9 +39,9 @@ gem 'mechanize'
 # gem 'unicorn'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-group :development do 
+group :development do
   gem 'quiet_assets'
-  gem 'meta_request' # https://chrome.google.com/webstore/detail/railspanel/gjpfobpafnhjhbajcjgccbbdofdckggg
+  gem 'meta_request'
   gem 'binding_of_caller' # Going up the stack  binding.of_caller(2).eval('var = :hello')
   gem 'pry-rails' # Uses pry instead of irb for the console
   gem 'pry-byebug'
@@ -53,6 +52,7 @@ gem 'bootstrap-sass'
 gem 'bootstrap-generators', '~> 3.1.1'
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'capybara'
   gem 'rspec-rails', '~> 2.99'
   gem "factory_girl_rails", "~> 4.0"
