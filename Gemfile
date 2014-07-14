@@ -51,6 +51,9 @@ end
 gem 'bootstrap-sass'
 gem 'bootstrap-generators', '~> 3.1.1'
 
+# Builds the chart
+gem 'highcharts-rails'
+
 group :development, :test do
   gem 'dotenv-rails'
   gem 'capybara'
