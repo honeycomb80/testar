@@ -60,6 +60,7 @@ module Parsing
   def strip_punct(string)
     words = string.split
     words.each do |word|
+      word.downcase!
       # Strips most types of punctuation from the front of the word
       if /\A\W/.match(word) != nil
         unless /\A(\.|\@|\#|\$)/.match(word) != nil
