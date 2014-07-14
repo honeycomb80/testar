@@ -38,7 +38,7 @@ task :tc_link_scrape => :environment do
         url = f.css('a')[0]['href']
         # Gets the headline
         headline = f.css('a')[0].text
-        # Combines all the parts, like Voltron
+        # Combines all the parts to make an Article
         Article.create(
           tc_num: tc_num,
           headline: headline,
