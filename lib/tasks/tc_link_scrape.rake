@@ -1,7 +1,7 @@
-task :tc_scrape => :environment do 
+task :tc_link_scrape => :environment do 
   require 'open-uri'
 
-  # Gets the articles
+  # Gets the info on the articles, makes Articles entries
   def get_article_data(pg = 2, article_date = Date.today)
     agent = Mechanize.new
     tc = agent.get('http://www.techcrunch.com')

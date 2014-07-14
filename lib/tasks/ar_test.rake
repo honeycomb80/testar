@@ -25,8 +25,15 @@ task :ar_test => :environment do
     puts w
   end
 
-a = Article.first
-a.update(scraped: false)
+  a = 'control yourself'
+  b = 'take only what you need'
+
+  
+  # a += " " + b
+
+  # puts a
+  # Article.each do |a|
+  #   puts 
 
 # month_date('2005-06-11')
 
