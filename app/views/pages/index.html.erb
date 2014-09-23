@@ -1,2 +1,23 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<head>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+  <script src="http://code.highcharts.com/modules/exporting.js"></script>
+</head>
+
+<%= @word %>
+<div class="searchbox">
+  <%= form_for :getting, url: graph_path do |f| %>
+      <%= f.text_field :search, placeholder: "e.g. Google, Apple, Facebook"%>
+      <%= f.submit "Search lots of articles"%>
+  <% end %>
+
+</div>
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+
+  <!-- <form action="/search" method="get">
+    <input class="wordBox" id="wordSearch" type="text" name="submit" placeholder="">
+    <button class="button" id="submit" type="submit">Search</button>
+  </form> -->
+
+
+<!-- <div> -->

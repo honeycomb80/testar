@@ -228,6 +228,7 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.0.0)
   dotenv-rails
+  execjs
   factory_girl_rails (~> 4.0)
   faker
   forgery

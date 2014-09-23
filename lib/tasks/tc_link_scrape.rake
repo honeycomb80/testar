@@ -8,7 +8,7 @@ task :tc_link_scrape => :environment do
     article_pg_count = 0
 
     # Limits the amount of articles scraped
-    until article_date === Date.today - 2  #<-- "yesterday" option
+    until article_date === Date.today - 25  #<-- "yesterday" option
     # until Article.find_by(tc_num: @tc_num) != nil #<-- "all" option
       # Gets the article date
       tc.root.css('li.river-block').each do |link|

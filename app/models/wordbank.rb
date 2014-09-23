@@ -7,4 +7,8 @@ class Wordbank < ActiveRecord::Base
   has_many :years, through: :year_count
 
   validates :word, presence: true, uniqueness: true
+
+  def find_word(word)
+    
+  end
 end
